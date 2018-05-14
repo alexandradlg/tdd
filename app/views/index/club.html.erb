@@ -1,0 +1,26 @@
+<% if user_signed_in? %>
+<div class="container">
+<table class="table">
+  <tr>
+    <h1>User Index<h1>
+    
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Profile</th>
+  </tr>
+  
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name%></td>
+      <td><%= user.email%></td>
+      <td><%= link_to 'profile', user_path(user) %></td>
+  <% end %>
+</table>
+</div>
+<% else %>
+<p>You must <%= link_to "sign in", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %> first</p>
+<% end %>
+
+

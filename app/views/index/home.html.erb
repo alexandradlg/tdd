@@ -1,0 +1,7 @@
+<% provide(:title, "Home") %>
+<% if user_signed_in? %>
+<h1>Welcome to the club!</h1></br>
+<p>Yay, welcome to the club! <%= link_to "Clic here to continue", club_path %></p>
+<% else %>
+<p>You must <%= link_to "sign in", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %> first</p>
+<% end %>

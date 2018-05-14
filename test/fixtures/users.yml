@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: "user"
+  last_name: "one"
+  email: "userone@gmail.com"
+  id: 10
+
+two:
+  first_name: "user"
+  last_name: "two"
+  email: "usertwo@gmail.com"
+
+michael:
+  first_name: "Michael"
+  last_name: "Example"
+  email: "michael@example.com"

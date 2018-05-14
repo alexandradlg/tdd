@@ -1,0 +1,6 @@
+    <p>First name : <%= @user.first_name %></p>
+    <p>Last name : <%= @user.last_name %></p>
+    <p>Email : <%= @user.email %></p>
+    <% if @user === current_user %> 
+    <p><%= link_to 'Editer', edit_user_registration_path %></p>
+    <% end %>
