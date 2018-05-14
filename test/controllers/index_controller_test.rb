@@ -16,6 +16,20 @@ class IndexControllerTest < ActionDispatch::IntegrationTest
     assert_select 'a[href=?]', new_user_session_path
   end
 
+  test "navbar should provide signin and signup" do
+    get root_url
+    assert_select 'a.nav-item.nav-link[href=?]', new_user_registration_path
+    assert_select 'a.nav-item.nav-link[href=?]', new_user_session_path
+  end
+
+  test "navbar should provide club and show" do
+    sign_in(users(:one))
+    @id = users(:one).id
+    get root_url
+    assert_select 'a.nav-item.nav-link[href=?]', club_path
+    assert_select 'a.dropdown-item[href=?]', user_path(@id)
+  end
+
   test "invalid confirmation password signup information" do
     get new_user_registration_path
       post user_registration_path, params: { user: { email: "user@test.com",
